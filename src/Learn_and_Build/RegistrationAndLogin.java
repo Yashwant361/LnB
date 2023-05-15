@@ -53,8 +53,21 @@ public class RegistrationAndLogin {
         String name = scanner.nextLine();
         System.out.println("Enter your email address:");
         String email = scanner.nextLine();
-        System.out.println("Enter your password:");
-        String password = scanner.nextLine();
+
+        PassWrdGen p = new PassWrdGen(8,true,true,true,true);
+        //System.out.println("Enter a password:");
+        String password = p.genetate();
+        System.out.println("Registration Successful, \n Your password is " + password);
+        System.out.println("Need custom passWRD? press Yes or yes to confirm !!");
+        char a = scanner.next().charAt(0);
+        if(a == 'y' || a == 'Y') {
+            System.out.println("Enter new password: ");
+            password = scanner.next();
+            System.out.println("password changed!");
+        }
+//        else {
+//            System.out.println("Sssssshhhhh!!");
+//        }
 
         //The write() method of the BufferedWriter object is called to write the user's information to the file(txt).
 
